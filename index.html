@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bitcake | Postres dulces, salados y fit</title>
+  <meta name="description" content="Bitcake: postres dulces, salados y fit hechos por pedido. Un bocado para cada antojo.">
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <div class="contenedor header-in">
+      <a class="logo" href="#inicio" aria-label="Bitcake, inicio">🧁 Bit<span>cake</span></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+      <nav class="nav" id="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#tienda">Tienda</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+        <a href="login.php" class="nav-cuenta">Mi cuenta</a>
+        <button class="carrito-btn" id="abrirCarrito" aria-label="Abrir carrito">
+          🛒 <span id="contadorCarrito">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- INICIO -->
+    <section class="hero" id="inicio">
+      <div class="contenedor hero-in">
+        <div class="hero-txt">
+          <p class="etiqueta">Hecho por pedido</p>
+          <h1>Un bocado para cada antojo</h1>
+          <p>Postres dulces, salados y fit elaborados en pequeñas tandas. Elige tus favoritos y recíbelos frescos en tu domicilio.</p>
+          <div class="hero-btns">
+            <a class="btn" href="#tienda">Ver la tienda</a>
+            <a class="btn btn-sec" href="registro.php">Crear cuenta</a>
+          </div>
+        </div>
+        <div class="hero-img" aria-hidden="true">
+          <span>🧁</span>
+          <i class="pixel p1"></i><i class="pixel p2"></i><i class="pixel p3"></i><i class="pixel p4"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="beneficios">
+      <div class="contenedor grid-4">
+        <div><span>🚚</span><h3>Envío gratis</h3><p>En pedidos desde $300 MXN.</p></div>
+        <div><span>👩‍🍳</span><h3>Por pedido</h3><p>Producción fresca, sin conservadores.</p></div>
+        <div><span>🔒</span><h3>Compra segura</h3><p>Sitio con HTTPS y datos protegidos.</p></div>
+        <div><span>🎟️</span><h3>Cupón BIENVENIDO10</h3><p>10 % en tu primera compra.</p></div>
+      </div>
+    </section>
+
+    <!-- TIENDA -->
+    <section class="seccion" id="tienda">
+      <div class="contenedor">
+        <h2 class="titulo">Nuestra tienda</h2>
+        <p class="sub">20 productos organizados en 3 categorías.</p>
+
+        <div class="barra">
+          <div class="filtros" id="filtros">
+            <button class="chip activo" data-cat="todos">Todos</button>
+            <button class="chip" data-cat="dulces">Postres dulces</button>
+            <button class="chip" data-cat="salados">Postres salados</button>
+            <button class="chip" data-cat="fit">Postres fit</button>
+          </div>
+          <input type="search" id="buscador" placeholder="Buscar postre…" aria-label="Buscar postre">
+        </div>
+
+        <div class="productos" id="productos"></div>
+        <p class="vacio" id="vacio" hidden>No encontramos postres con esa búsqueda.</p>
+
+        <p class="nota">La línea fit no tiene fines médicos ni terapéuticos: es una alternativa de porciones y recetas más ligeras. Los precios son de práctica.</p>
+      </div>
+    </section>
+
+    <!-- NOSOTROS -->
+    <section class="seccion alt" id="nosotros">
+      <div class="contenedor dos-col">
+        <div>
+          <h2 class="titulo">Nosotros</h2>
+          <p>Bitcake combina <strong>bit</strong>, la unidad mínima de información, con <strong>cake</strong>, pastel en inglés. Nació como proyecto del curso <em>Desarrolla soluciones de comercio electrónico</em> del CBT Dr. Alfonso León de Garay, Tequixquiac, y su lema es <strong>“Un bocado para cada antojo”</strong>.</p>
+          <p>Trabajamos con producción por pedido y entrega local o por paquetería, cuidando que cada postre llegue en buen estado.</p>
+        </div>
+        <ul class="equipo">
+          <li>Nataly Guadalupe Gómez Guzmán</li>
+          <li>Camila Guadalupe Salinas Rodríguez</li>
+          <li>Ian Rodríguez Rodríguez</li>
+          <li>Brandon Gael Rodríguez Trejo</li>
+          <li class="grupo">3.º · Grupo 4 · Técnico en Informática</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ENVÍOS Y PAGOS -->
+    <section class="seccion">
+      <div class="contenedor">
+        <h2 class="titulo">Envíos y pagos</h2>
+        <div class="grid-3">
+          <article class="tarjeta">
+            <h3>Zonas de envío</h3>
+            <ul>
+              <li>Local: $40 MXN o recogida gratis</li>
+              <li>Nacional (paquetería): $120 MXN</li>
+              <li>Envío gratis desde $300 MXN</li>
+            </ul>
+          </article>
+          <article class="tarjeta">
+            <h3>Formas de pago</h3>
+            <ul>
+              <li>Transferencia bancaria</li>
+              <li>Pago contra entrega (zona local)</li>
+              <li>Tarjeta o PayPal</li>
+            </ul>
+          </article>
+          <article class="tarjeta">
+            <h3>Cupones</h3>
+            <ul>
+              <li><strong>BIENVENIDO10</strong>: 10 % de descuento</li>
+              <li><strong>ENVIOGRATIS</strong>: desde $250 MXN</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEGAL -->
+    <section class="seccion alt" id="privacidad">
+      <div class="contenedor">
+        <h2 class="titulo">Aviso de privacidad y términos</h2>
+        <div class="grid-2">
+          <details class="acordeon">
+            <summary>Aviso de privacidad</summary>
+            <p><strong>Responsable:</strong> Bitcake. <strong>Datos que recabamos:</strong> nombre, correo, teléfono y dirección de entrega.</p>
+            <p><strong>Finalidades:</strong> procesar pedidos, entregarlos y contactarte. Podemos compartir datos con paquetería y pasarela de pago únicamente para ese fin.</p>
+            <p>Puedes ejercer tus derechos de acceso, rectificación, cancelación y oposición (ARCO) escribiendo a hola@bitcake.com.mx. Las contraseñas se almacenan cifradas.</p>
+            <p class="nota">Texto modelo de práctica; debe revisarse con un profesional del derecho.</p>
+          </details>
+          <details class="acordeon">
+            <summary>Términos y condiciones</summary>
+            <p>Los precios están en MXN. Al confirmar un pedido aceptas estas condiciones, las zonas, tiempos y costos de envío informados, y la política de cancelación o reposición de productos perecederos.</p>
+            <p>Cada producto indica sus alérgenos (gluten, lácteos, huevo, nueces). Las fotografías y la marca Bitcake son propiedad de sus autores.</p>
+            <p>Si tu pedido llega dañado, repórtalo con tu número de pedido y evidencia fotográfica. Estas condiciones no limitan tus derechos como consumidor.</p>
+            <p class="nota">Texto modelo de práctica; requiere revisión legal.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="seccion" id="contacto">
+      <div class="contenedor dos-col">
+        <div>
+          <h2 class="titulo">Contacto</h2>
+          <p>¿Dudas sobre un pedido o quieres algo especial? Escríbenos.</p>
+          <ul class="contacto-lista">
+            <li>📧 hola@bitcake.com.mx</li>
+            <li>📞 55 0000 0000</li>
+            <li>📍 Tequixquiac, Estado de México</li>
+          </ul>
+          <p class="nota">Datos de ejemplo para práctica.</p>
+        </div>
+        <form class="form-contacto" id="formContacto">
+          <label>Nombre<input required name="nombre"></label>
+          <label>Correo<input type="email" required name="correo"></label>
+          <label>Mensaje<textarea rows="4" required name="mensaje"></textarea></label>
+          <button class="btn" type="submit">Enviar mensaje</button>
+          <p class="ok" id="okContacto" hidden>¡Gracias! Te responderemos pronto.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE -->
+  <footer class="footer">
+    <div class="contenedor footer-in">
+      <div>
+        <a class="logo logo-claro" href="#inicio">🧁 Bit<span>cake</span></a>
+        <p>Un bocado para cada antojo.</p>
+      </div>
+      <div>
+        <h4>Enlaces</h4>
+        <a href="#tienda">Tienda</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#privacidad">Aviso de privacidad</a>
+        <a href="#privacidad">Términos y condiciones</a>
+      </div>
+      <div>
+        <h4>Mi cuenta</h4>
+        <a href="login.php">Iniciar sesión</a>
+        <a href="registro.php">Crear cuenta</a>
+      </div>
+    </div>
+    <p class="copy">© 2026 Bitcake · Proyecto escolar CBT Tequixquiac</p>
+  </footer>
+
+  <!-- CARRITO -->
+  <div class="fondo" id="fondo"></div>
+  <aside class="carrito" id="carrito" aria-label="Carrito de compras">
+    <div class="carrito-top">
+      <h3>Tu carrito</h3>
+      <button id="cerrarCarrito" aria-label="Cerrar carrito">✕</button>
+    </div>
+    <div class="carrito-items" id="carritoItems"></div>
+    <div class="carrito-pie">
+      <div class="cupon">
+        <input id="cuponInput" placeholder="Código de cupón">
+        <button class="btn btn-peq" id="aplicarCupon">Aplicar</button>
+      </div>
+      <p class="cupon-msg" id="cuponMsg"></p>
+      <div class="fila-total"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+      <div class="fila-total" id="filaDesc" hidden><span>Descuento</span><span id="descuento">-$0.00</span></div>
+      <div class="fila-total"><span>Envío</span><span id="envio">$0.00</span></div>
+      <div class="fila-total total"><span>Total</span><span id="total">$0.00</span></div>
+      <button class="btn btn-ancho" id="finalizar">Finalizar compra</button>
+      <p class="nota">Demo: el pago en línea aún no está conectado.</p>
+    </div>
+  </aside>
+
+  <script>
+    // ---------- Catálogo (Tabla 5 del manual) ----------
+    const PRODUCTOS = [
+      // [sku, nombre, categoría, presentación, precio, emoji]
+      ["BC-D01","Cupcake de vainilla con betún de frambuesa","dulces","Pieza",45,"🧁"],
+      ["BC-D02","Cupcake de chocolate","dulces","Pieza",45,"🧁"],
+      ["BC-D03","Brownie de chocolate","dulces","Pieza",40,"🍫"],
+      ["BC-D04","Cheesecake individual","dulces","Vaso o rebanada",65,"🍰"],
+      ["BC-D05","Galleta con chispas de chocolate","dulces","Pieza",25,"🍪"],
+      ["BC-D06","Tarta de limón individual","dulces","Pieza",55,"🍋"],
+      ["BC-D07","Flan napolitano individual","dulces","Vaso",50,"🍮"],
+      ["BC-S01","Mini quiche de espinaca y queso","salados","Pieza",50,"🥧"],
+      ["BC-S02","Mini quiche de jamón y queso","salados","Pieza",50,"🥧"],
+      ["BC-S03","Muffin salado de queso y jalapeño","salados","Pieza",40,"🧀"],
+      ["BC-S04","Galletas de queso y romero","salados","Caja de 6",60,"🍘"],
+      ["BC-S05","Pan de ajo y hierbas","salados","Bolsa de 4",45,"🥖"],
+      ["BC-S06","Rollito de pizza","salados","Pieza",35,"🍕"],
+      ["BC-S07","Empanada de queso y champiñones","salados","Pieza",38,"🥟"],
+      ["BC-F01","Brownie de avena y cacao","fit","Pieza",50,"🌱"],
+      ["BC-F02","Cheesecake de yogur griego","fit","Vaso",60,"🥛"],
+      ["BC-F03","Galletas de avena y plátano","fit","Caja de 6",55,"🍌"],
+      ["BC-F04","Muffin de avena y manzana","fit","Pieza",42,"🍎"],
+      ["BC-F05","Barra de avena y nuez","fit","Pieza",38,"🌰"],
+      ["BC-F06","Vaso de yogur griego con fruta y granola","fit","Vaso",55,"🍓"]
+    ].map(([sku, nombre, cat, pres, precio, emoji]) => ({ sku, nombre, cat, pres, precio, emoji }));
+
+    const NOMBRE_CAT = { dulces: "Postres dulces", salados: "Postres salados", fit: "Postres fit" };
+    const CUPONES = { "BIENVENIDO10": { tipo: "porc", valor: 10 }, "ENVIOGRATIS": { tipo: "envio", minimo: 250 } };
+    const ENVIO_TARIFA = 120, ENVIO_GRATIS_DESDE = 300;
+
+    const $ = (id) => document.getElementById(id);
+    const dinero = (n) => "$" + n.toLocaleString("es-MX", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+    let categoria = "todos", busqueda = "";
+    let carrito = {};   // { sku: cantidad }
+    let cupon = null;
+
+    try { carrito = JSON.parse(localStorage.getItem("bitcake_carrito")) || {}; } catch (e) { carrito = {}; }
+
+    // ---------- Catálogo ----------
+    function pintarProductos() {
+      const lista = PRODUCTOS.filter(p =>
+        (categoria === "todos" || p.cat === categoria) &&
+        p.nombre.toLowerCase().includes(busqueda)
+      );
+      $("productos").innerHTML = lista.map(p => `
+        <article class="producto cat-${p.cat}">
+          <div class="producto-img" aria-hidden="true">${p.emoji}</div>
+          <span class="producto-cat">${NOMBRE_CAT[p.cat]}</span>
+          <h3>${p.nombre}</h3>
+          <p class="pres">${p.pres} · SKU ${p.sku}</p>
+          <div class="producto-pie">
+            <strong>${dinero(p.precio)}</strong>
+            <button class="btn btn-peq" data-add="${p.sku}">Añadir</button>
+          </div>
+        </article>`).join("");
+      $("vacio").hidden = lista.length > 0;
+    }
+
+    // ---------- Carrito ----------
+    function guardar() { try { localStorage.setItem("bitcake_carrito", JSON.stringify(carrito)); } catch (e) {} }
+
+    function calcular() {
+      let subtotal = 0, cantidad = 0;
+      for (const sku in carrito) {
+        const p = PRODUCTOS.find(x => x.sku === sku);
+        if (p) { subtotal += p.precio * carrito[sku]; cantidad += carrito[sku]; }
+      }
+      let descuento = 0, envioGratis = subtotal >= ENVIO_GRATIS_DESDE;
+      if (cupon === "BIENVENIDO10") descuento = subtotal * 0.10;
+      if (cupon === "ENVIOGRATIS" && subtotal >= CUPONES.ENVIOGRATIS.minimo) envioGratis = true;
+      const envio = cantidad === 0 || envioGratis ? 0 : ENVIO_TARIFA;
+      return { subtotal, descuento, envio, total: subtotal - descuento + envio, cantidad };
+    }
+
+    function pintarCarrito() {
+      const keys = Object.keys(carrito).filter(k => PRODUCTOS.some(p => p.sku === k));
+      $("carritoItems").innerHTML = keys.length ? keys.map(sku => {
+        const p = PRODUCTOS.find(x => x.sku === sku);
+        return `
+        <div class="item">
+          <span class="item-emoji">${p.emoji}</span>
+          <div class="item-info"><strong>${p.nombre}</strong><small>${dinero(p.precio)} · ${p.pres}</small></div>
+          <div class="cant">
+            <button data-menos="${sku}" aria-label="Quitar uno">−</button>
+            <span>${carrito[sku]}</span>
+            <button data-mas="${sku}" aria-label="Añadir uno">+</button>
+          </div>
+        </div>`;
+      }).join("") : '<p class="vacio">Tu carrito está vacío.</p>';
+
+      const t = calcular();
+      $("subtotal").textContent = dinero(t.subtotal);
+      $("filaDesc").hidden = t.descuento === 0;
+      $("descuento").textContent = "-" + dinero(t.descuento);
+      $("envio").textContent = t.envio ? dinero(t.envio) : "Gratis";
+      $("total").textContent = dinero(t.total);
+      $("contadorCarrito").textContent = t.cantidad;
+    }
+
+    function cambiar(sku, delta) {
+      carrito[sku] = (carrito[sku] || 0) + delta;
+      if (carrito[sku] <= 0) delete carrito[sku];
+      guardar(); pintarCarrito();
+    }
+
+    function abrir(v) {
+      $("carrito").classList.toggle("abierto", v);
+      $("fondo").classList.toggle("visible", v);
+    }
+
+    // ---------- Eventos ----------
+    document.addEventListener("click", (e) => {
+      const t = e.target;
+      if (t.dataset.add)   { cambiar(t.dataset.add, 1); abrir(true); }
+      if (t.dataset.mas)   cambiar(t.dataset.mas, 1);
+      if (t.dataset.menos) cambiar(t.dataset.menos, -1);
+    });
+
+    $("filtros").addEventListener("click", (e) => {
+      if (!e.target.dataset.cat) return;
+      categoria = e.target.dataset.cat;
+      document.querySelectorAll(".chip").forEach(c => c.classList.toggle("activo", c === e.target));
+      pintarProductos();
+    });
+
+    $("buscador").addEventListener("input", (e) => { busqueda = e.target.value.trim().toLowerCase(); pintarProductos(); });
+    $("abrirCarrito").addEventListener("click", () => abrir(true));
+    $("cerrarCarrito").addEventListener("click", () => abrir(false));
+    $("fondo").addEventListener("click", () => abrir(false));
+    $("menuBtn").addEventListener("click", () => $("nav").classList.toggle("abierto"));
+    $("nav").addEventListener("click", (e) => { if (e.target.tagName === "A") $("nav").classList.remove("abierto"); });
+
+    $("aplicarCupon").addEventListener("click", () => {
+      const codigo = $("cuponInput").value.trim().toUpperCase();
+      const msg = $("cuponMsg");
+      if (!CUPONES[codigo]) { cupon = null; msg.textContent = "Cupón no válido."; msg.className = "cupon-msg error"; }
+      else if (codigo === "ENVIOGRATIS" && calcular().subtotal < CUPONES.ENVIOGRATIS.minimo) {
+        cupon = null; msg.textContent = "ENVIOGRATIS requiere un gasto mínimo de $250 MXN."; msg.className = "cupon-msg error";
+      } else { cupon = codigo; msg.textContent = "Cupón aplicado: " + codigo; msg.className = "cupon-msg ok"; }
+      pintarCarrito();
+    });
+
+    $("finalizar").addEventListener("click", () => {
+      if (calcular().cantidad === 0) { alert("Agrega al menos un producto."); return; }
+      alert("Para finalizar la compra inicia sesión o crea tu cuenta.\n(El pago en línea es parte de la configuración de WooCommerce.)");
+      window.location.href = "login.php";
+    });
+
+    $("formContacto").addEventListener("submit", (e) => {
+      e.preventDefault();
+      $("okContacto").hidden = false;
+      e.target.reset();
+    });
+
+    pintarProductos();
+    pintarCarrito();
+  </script>
+</body>
+</html>
